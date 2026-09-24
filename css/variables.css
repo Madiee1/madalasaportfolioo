@@ -1,0 +1,82 @@
+/* ===========================================================
+   MADALASA — Design tokens
+   Ink-navy base with a single warm marigold accent. Light mode
+   swaps to a warm paper background; the accent stays constant
+   so the brand reads the same in both modes.
+   =========================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* --- Color: dark (default) --- */
+  --bg: #12141f;
+  --bg-elevated: #191c2a;
+  --surface: #1e2233;
+  --surface-hover: #262b40;
+  --border: #2c3148;
+  --border-soft: #23273a;
+
+  --ink: #eeeef4;
+  --ink-muted: #a7abc2;
+  --ink-faint: #6f7390;
+
+  --accent: #e3a542;
+  --accent-strong: #f0b95f;
+  --accent-ink: #1a1204;
+
+  --jade: #6fcf97;
+  --rose: #e08b8b;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-lift: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* --- Type --- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* --- Layout --- */
+  --max-width: 1180px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --nav-height: 72px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f6f3ec;
+  --bg-elevated: #fbf9f4;
+  --surface: #ffffff;
+  --surface-hover: #f1ede3;
+  --border: #e3ddcd;
+  --border-soft: #ece7da;
+
+  --ink: #1c1d22;
+  --ink-muted: #55586a;
+  --ink-faint: #8b8e9e;
+
+  --accent: #c9832a;
+  --accent-strong: #b3721f;
+  --accent-ink: #fffaf0;
+
+  --jade: #2f8f5f;
+  --rose: #b85a5a;
+
+  --shadow-soft: 0 1px 2px rgba(20, 16, 8, 0.06);
+  --shadow-lift: 0 16px 40px rgba(20, 16, 8, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

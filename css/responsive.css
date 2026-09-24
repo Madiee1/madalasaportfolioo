@@ -1,0 +1,79 @@
+/* ===========================================================
+   MADALASA — Responsive breakpoints
+   Tested at 1440 / 1024 / 768 / 480 / 375
+   =========================================================== */
+
+/* ----- 1024px: tighten the hero and project grid ----- */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-portrait { max-width: 340px; margin: 0 auto; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .cert-list { grid-template-columns: 1fr; }
+}
+
+/* ----- 900px: switch to mobile nav ----- */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+
+  .site-nav.is-menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 1rem var(--gutter) 1.5rem;
+    gap: 0.25rem;
+  }
+  .site-nav.is-menu-open .nav-links a {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border-soft);
+    width: 100%;
+  }
+
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; max-width: 320px; margin: 0 auto 1rem; }
+
+  .project-grid { grid-template-columns: 1fr; }
+  .project-card.is-featured { grid-column: span 1; }
+
+  .scrap-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ----- 768px ----- */
+@media (max-width: 768px) {
+  :root { --nav-height: 64px; }
+
+  section { padding: 3.25rem 0; }
+
+  .hero { padding-top: calc(var(--nav-height) + 2rem); }
+  .hero h1 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+
+  .about-facts { grid-template-columns: 1fr 1fr; }
+
+  .timeline { padding-left: 1.5rem; }
+  .timeline-item::before { left: -1.94rem; }
+}
+
+/* ----- 480px ----- */
+@media (max-width: 480px) {
+  .scrap-grid { grid-template-columns: 1fr; }
+  .about-facts { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+  .resume-card { flex-direction: column; align-items: flex-start; }
+  .resume-actions { width: 100%; }
+  .resume-actions .btn { flex: 1; justify-content: center; }
+  .modal-panel { padding: 1.5rem 1.25rem; }
+  .skills-tabs { gap: 0.4rem; }
+  .skills-tab { padding: 0.45rem 0.85rem; font-size: 0.82rem; }
+}
+
+/* ----- 375px: extra tight ----- */
+@media (max-width: 375px) {
+  .container { padding: 0 1rem; }
+  .hero h1 { font-size: 2rem; }
+  .project-card { padding: 1.35rem; }
+}
